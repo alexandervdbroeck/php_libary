@@ -1,0 +1,28 @@
+@import "reset.css";
+
+header{
+    height: 150px;
+    background: blue;
+    font-size: 2rem;
+    color: white;
+    width: 100%;
+    text-align: center;
+    line-height: 150px;
+}
+
+nav{
+    width: 100%;
+    background: gray;
+    height: 50px;
+}
+
+nav ul{
+    display: flex;
+}
+nav  a{
+    text-decoration: none;
+    margin: 1.2em;
+    line-height: 50px;
+    color: white;
+    font-size: 1.2rem;
+}

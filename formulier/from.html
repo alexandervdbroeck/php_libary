@@ -1,0 +1,68 @@
+<form action="lib/inspireer_functions.php" method="post" class="form-blog" enctype="multipart/form-data">
+    <input type="hidden" id="formname" name="formname" value="creeer_form">
+    <input type="hidden" id="tablename" name="tablename" value="post">
+    <fieldset>
+        <div class="create-blog">
+            <div class="blog-details">
+
+                <div>
+                    <label for="post_title">Titel</label>
+                    <input type="text" class="titel" id="post_title" name="post_title" value="" required>
+                </div>
+                <div >
+                    <label for="land_id">Land: </label>
+                    <select id="land_id" name="land_id" required>
+                        <option disabled selected >Kies een land ...</option>
+                        <!-- dynamisch gecreeerde dropdown categorie-->
+                        @@landen@@
+                    </select>
+                </div>
+                <div >
+                    <label for="post_stad_naam">Stad</label>
+                    <input type="text" id="post_stad_naam" name="post_stad_naam" required>
+                </div>
+                <div >
+                    <label for="cat_naam">Vakantie: </label>
+                    <select id="cat_naam" name="cat_naam" required>
+                        <option disabled selected>Kies een vakantie ...</option>
+                        <!-- dynamisch gecreeerde dropdown categorie-->
+                        @@category@@
+                    </select>
+                </div>
+
+            </div>
+            <div >
+                <img src="images/polaroid.png" alt="">
+                <input  id="filename" class="filename" name="filename[]" type="file" multiple  >
+                <label for="filename" class="filename-label">Kies afbeeldingen</label>
+            </div>
+        </div>
+        <div >
+            <label for="post_blog">Schrijf je blog</label>
+            <textarea id="post_blog" name="post_blog" rows="30" cols="30"></textarea>
+        </div>
+        <div  >
+            <input type="submit" name="submitpost" value="Save" >
+        </div>
+
+    </fieldset>
+</form>
+<form id="contactform">
+    <ul>
+        <li>
+            <label for="naam">Naam</label>
+            <input type="text" id="naam" name="naam" required tabindex="1">
+        </li>
+        <li>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required tabindex="2">
+        </li>
+        <li>
+            <label for="vragen">Vragen?</label>
+            <textarea id="vragen" name="vragen" required tabindex="3" placeholder="Typ hier je vraag..."></textarea>
+        </li>
+        <li>
+            <input type="submit" value="Verzend" tabindex="4">
+        </li>
+    </ul>
+</form>
