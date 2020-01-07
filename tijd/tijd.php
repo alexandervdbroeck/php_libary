@@ -1,12 +1,17 @@
 <?php
-$birthday = (isset($_POST)) ? new DateTime($_POST['leeftijd']): new DateTime("now");
-echo $birthday->format("d/m/Y")."<br>";
-$age = $birthday->diff(new DateTime("now", new DateTimeZone("Europe/Brussels")))->days;
-echo $age;
+// How to get the first day of a week using the date  time class
+$time = new DateTime("17-05-1982",new DateTimeZone("Europe/Brussels"));
+$week = $time->format("W");
+$year = $time->format("Y");
+$time2 = new DateTime("$year".W."$week",new DateTimeZone("Europe/Brussels"));
+for($i=0;$i<7;$i++)
+{
+    $time3 = $time2->format("l-d-m-Y ");
+    echo "<p>". $time3."</p>";
+    $time2 = $time2->modify("next day");
+}
 
-echo $birthday->format("d-m-Y")."<br>";
-echo $age * 24 * 60 ."minuten oud <br>";
-
+// function that prints a week in a tabel, when giving it a weeknumer (2digit) and a year
 function PrintWeekfromYearAndWeek($week, $year){
     for( $day=1; $day <= 7; $day++ )
     {
@@ -30,6 +35,5 @@ function PrintWeekfromYearAndWeek($week, $year){
     }
 
     echo "</table>";
-
 
 }
