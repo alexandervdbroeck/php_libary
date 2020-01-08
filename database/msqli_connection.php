@@ -58,11 +58,6 @@ function ExecuteMysqli($sql){
 
     }
 }
-ExecuteMysqli("insert into user set usr_voornaam = 'joodelen',
-                            usr_naam = 'tesgfhtje',
-                            usr_email = 'tesfgdhtje',
-                            usr_paswoord ='sdlksfdghdjfje'");
 
 
-$rows = GetDataOneRowMysqli("Select * from user where usr_id = 15");
-var_dump($rows);
+
