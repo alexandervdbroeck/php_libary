@@ -1,4 +1,7 @@
 <?php
+
+// the first function makes a table (including the head of the tabel) from a sql statement and returns the tabel
+// second function returns a table from an array.
 function CreateTableFromSQL($sql){
     $data = GetData($sql);
     $arr = array();
