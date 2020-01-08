@@ -1,5 +1,5 @@
 <?php
-//In de auto load wordt de toegang zo geregeld:
+//First part is the auto-load section which is loaded on every page, if users are not logged in they get redirected
 
 session_start();
 $_SESSION["head_printed"] = false;
@@ -11,8 +11,7 @@ require_once "view_functions.php";      //basic_head, load_template, replacecont
 require_once "authorisation.php";      //controle login e.d.
 require_once "show_messages.php";
 //
-//redirect naar NO ACCESS pagina als de gebruiker niet ingelogd is en niet naar
-//de loginpagina gaat
+//Redirect if user is not logged in , and not visiting 'login, n access, register)
 if ( ! isset($_SESSION['usr']) AND ! $login_form AND ! $register_form AND ! $no_access)
 {
     header("Location: " . $_application_folder . "/no_access.php");
@@ -22,7 +21,7 @@ if ( ! isset($_SESSION['usr']) AND ! $login_form AND ! $register_form AND ! $no_
 $login_form = true;
 require_once "lib/autoload.php";
 
-//redirect naar homepage als de gebruiker al ingelogd is
+//Rederect if users are not logged in
 if ( isset($_SESSION['usr']) )
 {
     $_SESSION["msg"][] = "U bent al ingelogd!";
@@ -30,5 +29,7 @@ if ( isset($_SESSION['usr']) )
     exit;
 }
 
-// op de pagina's waar men geen toegang tot heeft:
+// On pages where a user who is not logged in can get access to:
 $no_access = true;
+$login_form = true;
+$register_form = true;

@@ -5,13 +5,14 @@
 function CreateTableFromSQL($sql){
     $data = GetData($sql);
     $arr = array();
+    // prints the head first from the values
     $tekst = "<thead><tr><th>";
     foreach ($data[0] as $head => $val){
         $arr[].= $head;
     }
     $tekst .= implode("</th><th>",$arr)."</th></tr></thead><tbody>";
 
-    // data invullen
+    // starting from the second row the data is filed in
     $arr = array();
     foreach ($data as $user){
         foreach ($user as $val){
