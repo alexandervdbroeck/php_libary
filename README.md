@@ -1,5 +1,5 @@
-# php_libary
-my first php libary
+# php_library
+my first php library
 
 For the functions which needs connection to the database, use this one:
 
